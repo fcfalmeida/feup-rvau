@@ -57,7 +57,7 @@ LightmapSettings:
     serializedVersion: 12
     m_Resolution: 2
     m_BakeResolution: 40
-    m_AtlasSize: 1024
+    m_AtlasSize: 512
     m_AO: 0
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -2188,7 +2188,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -2605,6 +2605,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac5c687f5a82804cbfc152572d5e8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MIN_HEARBEAT_PITCH: 0
+  MAX_HEARTBEAT_PITCH: 0
+  MIN_DISTANCE: 0
 --- !u!1 &803688197
 GameObject:
   m_ObjectHideFlags: 0

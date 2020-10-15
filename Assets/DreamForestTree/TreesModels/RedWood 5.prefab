@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 193105811232424698}
   - component: {fileID: 33065013992664210}
   - component: {fileID: 23466419510729776}
+  - component: {fileID: -8042399746542393941}
   m_Layer: 0
   m_Name: RedWood 5
   m_TagString: Untagged
@@ -90,6 +91,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &-8042399746542393941
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970681966781816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.9792485
+  m_Height: 48.382877
+  m_Direction: 1
+  m_Center: {x: -3.1551976, y: 21.14004, z: 4.977772}
 --- !u!21 &21440639111565978
 Material:
   serializedVersion: 6
