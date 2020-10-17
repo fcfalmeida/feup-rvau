@@ -28,16 +28,7 @@ public class PlayerController : MonoBehaviour
         
         transform.Translate(lookingDirection * verticalInput * moveSpeed * Time.deltaTime);
 
-        if (Input.GetButtonDown("Grab"))
-        {
-            if (objectHolder.GetHeldObject() != null)
-                objectHolder.ClearHeldObject();
-            else
-            {
-                if (targetObject is HoldableObject)
-                    objectHolder.SetHeldObject((HoldableObject) targetObject);
-            }
-        }
+        HandleGrab();
     }
 
     public void SetTargetObject(GameObject gameObject)
@@ -59,5 +50,19 @@ public class PlayerController : MonoBehaviour
     public IInteractable GetTargetObject()
     {
         return targetObject;
+    }
+
+    private void HandleGrab()
+    {
+        if (Input.GetButtonDown("Grab"))
+        {
+            if (objectHolder.GetHeldObject() != null)
+                objectHolder.ClearHeldObject();
+            else
+            {
+                if (targetObject is HoldableObject)
+                    objectHolder.SetHeldObject((HoldableObject) targetObject);
+            }
+        }
     }
 }

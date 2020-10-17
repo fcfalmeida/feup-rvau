@@ -6,6 +6,6 @@ public class HoldableObject : MonoBehaviour, IInteractable
 {
     public virtual void InteractWith()
     {
-        Debug.Log("Hold");
+        // Nothing needs to be done here
     }
 }

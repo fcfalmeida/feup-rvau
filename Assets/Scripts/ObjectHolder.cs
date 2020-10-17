@@ -23,12 +23,10 @@ public class ObjectHolder : MonoBehaviour
         heldObject = gameObject;
         heldObject.GetComponent<PositionConstraint>().constraintActive = true;
         heldObject.GetComponent<RotationConstraint>().constraintActive = true;
-        Debug.Log("Holding: " + heldObject);
     }
 
     public void ClearHeldObject()
     {
-        Debug.Log("Dropped: " + heldObject);
         heldObject.GetComponent<PositionConstraint>().constraintActive = false;
         heldObject.GetComponent<RotationConstraint>().constraintActive = false;
         heldObject = null;
