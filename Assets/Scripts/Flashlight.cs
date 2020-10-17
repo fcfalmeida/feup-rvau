@@ -14,7 +14,7 @@ public class Flashlight : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Flashlight"))
         {
             isOn = !isOn;
             light.enabled = isOn;
