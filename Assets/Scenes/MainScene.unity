@@ -3594,43 +3594,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 377c57e9ef0ee0e46a586ad087ef386b, type: 3}
---- !u!1 &1063040366 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: a2d308598386f4a0797f87a4b95b9dd1,
-    type: 3}
-  m_PrefabInstance: {fileID: 573184420}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1063040368 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7502254612006069644, guid: a2d308598386f4a0797f87a4b95b9dd1,
     type: 3}
   m_PrefabInstance: {fileID: 573184420}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063040366}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d32e2906565b4d7dbcd0e065df9103b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1818360609 &1063040374
-RotationConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063040366}
-  m_Enabled: 1
-  m_Weight: 1
-  m_RotationAtRest: {x: -89.98, y: 0, z: 0}
-  m_RotationOffset: {x: -89.98, y: 0, z: 0}
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_IsContraintActive: 0
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 131550179}
-    weight: 1
 --- !u!1001 &1068261717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6430,11 +6405,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.6
       objectReference: {fileID: 0}
-    - target: {fileID: 912822323894076765, guid: a2d308598386f4a0797f87a4b95b9dd1,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3134330104465519775, guid: a2d308598386f4a0797f87a4b95b9dd1,
         type: 3}
       propertyPath: m_Sources.Array.size
@@ -6503,38 +6473,13 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1830575033}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1830575035 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: a2d308598386f4a0797f87a4b95b9dd1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1830575033}
-  m_PrefabAsset: {fileID: 0}
---- !u!1818360609 &1830575036
-RotationConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830575035}
-  m_Enabled: 1
-  m_Weight: 1
-  m_RotationAtRest: {x: -89.98, y: 0, z: 0}
-  m_RotationOffset: {x: -89.98, y: 0, z: 0}
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_IsContraintActive: 0
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 131550179}
-    weight: 1
 --- !u!114 &1830575038 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7502254612006069644, guid: a2d308598386f4a0797f87a4b95b9dd1,
     type: 3}
   m_PrefabInstance: {fileID: 1830575033}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830575035}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d32e2906565b4d7dbcd0e065df9103b, type: 3}
@@ -7383,44 +7328,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057571825}
   m_Mesh: {fileID: 4300000, guid: fccc49bf3e108b94c8202230c83d6e92, type: 3}
---- !u!1 &2091258348 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: a2d308598386f4a0797f87a4b95b9dd1,
-    type: 3}
-  m_PrefabInstance: {fileID: 729876410}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2091258349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a2d308598386f4a0797f87a4b95b9dd1,
     type: 3}
   m_PrefabInstance: {fileID: 729876410}
   m_PrefabAsset: {fileID: 0}
---- !u!1818360609 &2091258350
-RotationConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091258348}
-  m_Enabled: 1
-  m_Weight: 1
-  m_RotationAtRest: {x: -89.98, y: 0, z: 0}
-  m_RotationOffset: {x: -89.98, y: 0, z: 0}
-  m_AffectRotationX: 1
-  m_AffectRotationY: 1
-  m_AffectRotationZ: 1
-  m_IsContraintActive: 0
-  m_IsLocked: 1
-  m_Sources:
-  - sourceTransform: {fileID: 131550179}
-    weight: 1
 --- !u!114 &2091258352 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7502254612006069644, guid: a2d308598386f4a0797f87a4b95b9dd1,
     type: 3}
   m_PrefabInstance: {fileID: 729876410}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2091258348}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d32e2906565b4d7dbcd0e065df9103b, type: 3}

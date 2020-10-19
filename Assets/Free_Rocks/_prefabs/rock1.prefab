@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 912822323894076765}
   - component: {fileID: 8948634500696688443}
   - component: {fileID: 7502254612006069644}
-  - component: {fileID: 3134330104465519775}
   - component: {fileID: 6019194502322437775}
   m_Layer: 0
   m_Name: rock1
@@ -170,23 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d32e2906565b4d7dbcd0e065df9103b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1818360608 &3134330104465519775
-PositionConstraint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Weight: 1
-  m_TranslationAtRest: {x: 11.039214, y: 1.6584021, z: 0.94600415}
-  m_TranslationOffset: {x: 0, y: 0, z: 0}
-  m_AffectTranslationX: 1
-  m_AffectTranslationY: 1
-  m_AffectTranslationZ: 1
-  m_IsContraintActive: 0
-  m_IsLocked: 0
-  m_Sources: []
 --- !u!65 &6019194502322437775
 BoxCollider:
   m_ObjectHideFlags: 0
