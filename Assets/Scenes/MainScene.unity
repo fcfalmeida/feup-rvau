@@ -2116,7 +2116,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1063040366}
+      objectReference: {fileID: 1063040368}
+    - target: {fileID: 8948634500696688443, guid: a2d308598386f4a0797f87a4b95b9dd1,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: InteractableObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 3}
 --- !u!1 &593625544
@@ -2746,7 +2751,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 2091258348}
+      objectReference: {fileID: 2091258352}
+    - target: {fileID: 8948634500696688443, guid: a2d308598386f4a0797f87a4b95b9dd1,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: InteractableObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 3}
 --- !u!1001 &765154725
@@ -3590,6 +3600,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 573184420}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1063040368 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7502254612006069644, guid: a2d308598386f4a0797f87a4b95b9dd1,
+    type: 3}
+  m_PrefabInstance: {fileID: 573184420}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063040366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d32e2906565b4d7dbcd0e065df9103b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1818360609 &1063040374
 RotationConstraint:
   m_ObjectHideFlags: 0
@@ -6408,6 +6430,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 912822323894076765, guid: a2d308598386f4a0797f87a4b95b9dd1,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3134330104465519775, guid: a2d308598386f4a0797f87a4b95b9dd1,
         type: 3}
       propertyPath: m_Sources.Array.size
@@ -6462,7 +6489,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1830575035}
+      objectReference: {fileID: 1830575038}
+    - target: {fileID: 8948634500696688443, guid: a2d308598386f4a0797f87a4b95b9dd1,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: InteractableObject, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 3}
 --- !u!4 &1830575034 stripped
@@ -6496,6 +6528,18 @@ RotationConstraint:
   m_Sources:
   - sourceTransform: {fileID: 131550179}
     weight: 1
+--- !u!114 &1830575038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7502254612006069644, guid: a2d308598386f4a0797f87a4b95b9dd1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1830575033}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830575035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d32e2906565b4d7dbcd0e065df9103b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1844322546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7370,6 +7414,18 @@ RotationConstraint:
   m_Sources:
   - sourceTransform: {fileID: 131550179}
     weight: 1
+--- !u!114 &2091258352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7502254612006069644, guid: a2d308598386f4a0797f87a4b95b9dd1,
+    type: 3}
+  m_PrefabInstance: {fileID: 729876410}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091258348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d32e2906565b4d7dbcd0e065df9103b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2091968394
 PrefabInstance:
   m_ObjectHideFlags: 0

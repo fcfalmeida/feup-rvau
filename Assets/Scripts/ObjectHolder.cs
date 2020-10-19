@@ -6,6 +6,7 @@ using UnityEngine.Animations;
 public class ObjectHolder : MonoBehaviour
 {
     private HoldableObject heldObject = null;
+    private bool hasCollided;
 
     void Start()
     {
@@ -15,20 +16,32 @@ public class ObjectHolder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        /*
+        if (heldObject != null)
+        {
+            heldObject.transform.position = transform.position;
+            heldObject.transform.localRotation = transform.rotation;
+        }
+        */
     }
 
     public void SetHeldObject(HoldableObject gameObject)
     {
         heldObject = gameObject;
-        heldObject.GetComponent<PositionConstraint>().constraintActive = true;
-        heldObject.GetComponent<RotationConstraint>().constraintActive = true;
+
+        heldObject.transform.parent = transform;
+
+        heldObject.GetComponent<Rigidbody>().isKinematic = true;
+
+        heldObject.transform.position = transform.position;
+        heldObject.transform.localRotation = new Quaternion(heldObject.transform.localRotation.x, 
+            transform.rotation.y, transform.rotation.z, transform.rotation.w);
     }
 
     public void ClearHeldObject()
     {
-        heldObject.GetComponent<PositionConstraint>().constraintActive = false;
-        heldObject.GetComponent<RotationConstraint>().constraintActive = false;
+        heldObject.GetComponent<Rigidbody>().isKinematic = false;
+        heldObject.transform.parent = null;
         heldObject = null;
     }
 

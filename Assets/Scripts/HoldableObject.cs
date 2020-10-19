@@ -2,10 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoldableObject : MonoBehaviour, IInteractable
+public class HoldableObject : InteractableObject
 {
-    public virtual void InteractWith()
+    private ObjectHolder objectHolder;
+
+    void Start()
     {
-        // Nothing needs to be done here
+        objectHolder = FindObjectOfType<ObjectHolder>();
+    }
+
+    public override void InteractWith()
+    {
+        objectHolder.SetHeldObject(this);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        /*
+        if (objectHolder.GetHeldObject() != null)
+            objectHolder.ClearHeldObject();
+        */
     }
 }
