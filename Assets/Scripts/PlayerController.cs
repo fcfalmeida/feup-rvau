@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float objectHolderOffset;
     private InteractableObject targetObject;
     private ObjectHolder objectHolder;
+    private int pickupCount;
     
     void Start()
     {
@@ -54,9 +55,17 @@ public class PlayerController : MonoBehaviour
                 objectHolder.ClearHeldObject();
             else
             {
+                Debug.Log("INTERACT");
                 if (targetObject != null)
                     targetObject.InteractWith();
             }
         }
+    }
+
+    public void PickupItem(PickupItem pickup)
+    {
+        pickupCount++;
+        Debug.Log("Total pickups: " + pickupCount);
+        Destroy(pickup.gameObject);
     }
 }
