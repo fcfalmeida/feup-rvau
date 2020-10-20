@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour
     public float objectHolderOffset;
     private InteractableObject targetObject;
     private ObjectHolder objectHolder;
+    private GameManager gameManager;
     private int pickupCount;
     
     void Start()
     {
         objectHolder = FindObjectOfType<ObjectHolder>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -65,5 +67,6 @@ public class PlayerController : MonoBehaviour
     {
         pickupCount++;
         Destroy(pickup.gameObject);
+        gameManager.UpdateScore(pickupCount);
     }
 }
