@@ -48,14 +48,13 @@ public class PlayerController : MonoBehaviour
 
     private void HandleInteract()
     {
-        if (Input.GetButtonDown("Grab"))
+        if (Input.GetButtonDown("Interact"))
         {
             // The player can't interact with another object if it already holding one
             if (objectHolder.GetHeldObject() != null)
                 objectHolder.ClearHeldObject();
             else
             {
-                Debug.Log("INTERACT");
                 if (targetObject != null)
                     targetObject.InteractWith();
             }
@@ -65,7 +64,6 @@ public class PlayerController : MonoBehaviour
     public void PickupItem(PickupItem pickup)
     {
         pickupCount++;
-        Debug.Log("Total pickups: " + pickupCount);
         Destroy(pickup.gameObject);
     }
 }
