@@ -6,12 +6,15 @@ public class PlayerController : MonoBehaviour
 {
   public float moveSpeed;
   public float objectHolderOffset;
-  private IInteractable targetObject;
+  private InteractableObject targetObject;
   private ObjectHolder objectHolder;
+  private GameManager gameManager;
+  private int pickupCount;
 
   void Start()
   {
     objectHolder = FindObjectOfType<ObjectHolder>();
+    gameManager = FindObjectOfType<GameManager>();
   }
 
   void Update()
@@ -19,24 +22,22 @@ public class PlayerController : MonoBehaviour
     float verticalInput = Input.GetAxis("Vertical");
 
     float xDirection = Camera.main.transform.forward.x;
+    float yDirection = Camera.main.transform.forward.y;
     float zDirection = Camera.main.transform.forward.z;
 
-    Vector3 lookingDirection = new Vector3(xDirection, 0, zDirection);
+    Vector3 lookingDirection = new Vector3(xDirection, yDirection, zDirection);
 
-    objectHolder.transform.localPosition = new Vector3(xDirection, objectHolder.transform.localPosition.y, zDirection)
+    objectHolder.transform.localPosition = lookingDirection
         * objectHolderOffset;
 
     transform.Translate(lookingDirection * verticalInput * moveSpeed * Time.deltaTime);
 
-    HandleGrab();
+    HandleInteract();
   }
 
-  public void SetTargetObject(GameObject gameObject)
+  public void SetTargetObject(InteractableObject interactableObject)
   {
-    IInteractable interactableObject = gameObject.GetComponent<IInteractable>();
-
-    if (interactableObject != null)
-      targetObject = interactableObject;
+    targetObject = interactableObject;
 
     Debug.Log("target: " + targetObject);
   }
@@ -47,22 +48,25 @@ public class PlayerController : MonoBehaviour
     Debug.Log("target: " + targetObject);
   }
 
-  public IInteractable GetTargetObject()
+  private void HandleInteract()
   {
-    return targetObject;
-  }
-
-  private void HandleGrab()
-  {
-    if (Input.GetButtonDown("Grab"))
+    if (Input.GetButtonDown("Interact"))
     {
+      // The player can't interact with another object if it already holding one
       if (objectHolder.GetHeldObject() != null)
         objectHolder.ClearHeldObject();
       else
       {
-        if (targetObject is HoldableObject)
-          objectHolder.SetHeldObject((HoldableObject)targetObject);
+        if (targetObject != null)
+          targetObject.InteractWith();
       }
     }
+  }
+
+  public void PickupItem(PickupItem pickup)
+  {
+    pickupCount++;
+    Destroy(pickup.gameObject);
+    gameManager.UpdateScore(pickupCount);
   }
 }
