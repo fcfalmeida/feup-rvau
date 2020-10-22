@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        scoreText.text = "Books found: 0/" + scoreGoal;
+        DisplayScore();
     }
 
     // Update is called once per frame
@@ -20,9 +20,22 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private void DisplayScore()
+    {
+        scoreText.text = "Books found: " + playerScore + "/" + scoreGoal;
+        scoreText.gameObject.SetActive(true);
+        StartCoroutine("HideScore");
+    }
+
+    private IEnumerator HideScore()
+    {
+        yield return new WaitForSeconds(4f);
+        scoreText.gameObject.SetActive(false);
+    }
+
     public void UpdateScore(int newScore)
     {
         playerScore = newScore;
-        scoreText.text = "Books found: " + newScore + "/" + scoreGoal;
+        DisplayScore();
     }
 }
