@@ -7,7 +7,7 @@ public class Heartbeat : MonoBehaviour
   private AudioSource heartbeat;
 
   private GameObject player;
-  private GameObject slenderman;
+  public GameObject slenderman;
   public float MIN_HEARBEAT_PITCH;
   public float MAX_HEARTBEAT_PITCH;
   public float MIN_DISTANCE;
@@ -17,7 +17,6 @@ public class Heartbeat : MonoBehaviour
   {
     heartbeat = GetComponent<AudioSource>();
     player = GameObject.Find("Player");
-    slenderman = GameObject.Find("Test");
   }
 
   // Update is called once per frame

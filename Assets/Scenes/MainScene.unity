@@ -4277,6 +4277,11 @@ PrefabInstance:
       propertyPath: MIN_DISTANCE
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5899591142650789900, guid: 288dbd2e124bd4e8b9d69fe15e0390d6,
+        type: 3}
+      propertyPath: slenderman
+      value: 
+      objectReference: {fileID: 189133010}
     - target: {fileID: 5899591142977157786, guid: 288dbd2e124bd4e8b9d69fe15e0390d6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
