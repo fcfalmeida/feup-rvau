@@ -38,4 +38,10 @@ public class GameManager : MonoBehaviour
         playerScore = newScore;
         DisplayScore();
     }
+
+    public void EndGame()
+    {
+        Debug.Log("Game Over!");
+    }
+
 }
