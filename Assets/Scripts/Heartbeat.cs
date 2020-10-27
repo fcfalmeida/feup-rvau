@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Heartbeat : MonoBehaviour
 {
-  private AudioSource heartbeat;
+  public AudioSource heartbeat;
 
-  private GameObject player;
+  public GameObject player;
   public GameObject slenderman;
   public float MIN_HEARBEAT_PITCH;
   public float MAX_HEARTBEAT_PITCH;
@@ -15,8 +13,7 @@ public class Heartbeat : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    heartbeat = GetComponent<AudioSource>();
-    player = GameObject.Find("Player");
+
   }
 
   // Update is called once per frame
