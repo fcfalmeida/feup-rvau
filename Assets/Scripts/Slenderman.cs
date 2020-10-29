@@ -8,7 +8,7 @@ public class Slenderman : MonoBehaviour
 {
     Camera mainCamera;
     GameObject player;
-    public float hitByThrowableForce = 3;
+    public float hitByThrowableForce = 10000;
     public float speed;
     public int RESPAWNSECONDS;
     public System.DateTime startTime;
