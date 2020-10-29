@@ -8,6 +8,7 @@ public class Slenderman : MonoBehaviour
 {
     Camera mainCamera;
     GameObject player;
+    public float hitByThrowableForce = 3;
     public float speed;
     public int RESPAWNSECONDS;
     public System.DateTime startTime;
@@ -33,13 +34,13 @@ public class Slenderman : MonoBehaviour
         float angle = Vector3.Angle(player.transform.forward, transform.position - player.transform.position);
 
         // Stop walking
-        if (!(angle < 60 && distance < 15))
+        if (!(angle < 60 && distance < 8))
         {
             Vector3 toTarget = player.transform.position - transform.position;
 
            transform.Translate(toTarget *  speed * Time.deltaTime);
-           //transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
+
 
         //Change location based on time
         System.TimeSpan ts = System.DateTime.UtcNow - startTime;
@@ -53,6 +54,20 @@ public class Slenderman : MonoBehaviour
         {
             FindObjectOfType<GameManager>().EndGame();
         }
+    }
 
+    void OnCollisionEnter(Collision c)
+    {
+        if(c.gameObject.tag == "Throwable")
+        {
+            Debug.Log("Hit by throwable");
+            // Calculate Angle Between the collision point and the player
+            Vector3 dir = c.contacts[0].point - transform.position;
+            // We then get the opposite (-Vector3) and normalize it
+            dir = -dir.normalized;
+            // And finally we add force in the direction of dir and multiply it by force. 
+            // This will push back the player
+            GetComponent<Rigidbody>().AddForce(dir * hitByThrowableForce);
+        }
     }
 }
