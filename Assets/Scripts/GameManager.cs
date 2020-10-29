@@ -5,9 +5,17 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public int scoreGoal;
     public Text scoreText;
+    public Slenderman slenderman;
+    public PlayerController player;
+    public Canvas menuCanvas;
+
+    [Header("Difficulty Parameters")]
+    public int scoreGoal;
+    public float slendermanSpeed;
+
     private int playerScore;
+    private bool inGame;
 
     void Start()
     {
@@ -39,9 +47,43 @@ public class GameManager : MonoBehaviour
         DisplayScore();
     }
 
+    public void StartGame() 
+    {
+        inGame = true;
+        slenderman.enabled = true;
+        player.enabled = true;
+        menuCanvas.gameObject.SetActive(false);
+    }
+
     public void EndGame()
     {
         Debug.Log("Game Over!");
+        inGame = false;
     }
 
+    public bool IsInGame()
+    {
+        return inGame;
+    }
+
+    public void ChangeDifficulty(string difficulty)
+    {
+        switch (difficulty) 
+        {
+            case "Easy":
+                scoreGoal = 4;
+                slendermanSpeed = 1.0f;
+                break;
+            case "Medium":
+                scoreGoal = 6;
+                slendermanSpeed = 1.2f;
+                break;
+            case "Hard":
+                scoreGoal = 8;
+                slendermanSpeed = 1.4f;
+                break;
+            default:
+                break;
+        }
+    }
 }

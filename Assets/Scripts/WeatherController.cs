@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using DigitalRuby.RainMaker;
 using UnityEngine;
 using UnityEngine.Android;
 
@@ -11,6 +12,9 @@ public class WeatherController : MonoBehaviour
 
     void Start()
     {
+        // RainMaker game object is disabled by default because otherwise the trees in the
+        // scene preview look glitched
+        rain.SetActive(true);
         StartCoroutine("StartLocationService");
     }
 
@@ -43,7 +47,7 @@ public class WeatherController : MonoBehaviour
             switch (weatherInfo.weather[0].main)
             {
                 case "Rain":
-                    SetRaining();
+                    SetRaining(true);
                     break;
                 default:
                     break;
@@ -53,9 +57,12 @@ public class WeatherController : MonoBehaviour
         response.Close();
     }
 
-    private void SetRaining()
+    public void SetRaining(bool raining)
     {
-        rain.SetActive(true);
+        if (raining)
+            rain.GetComponent<RainScript>().RainIntensity = 0.2f;
+        else
+            rain.GetComponent<RainScript>().RainIntensity = 0f;
     }
 
     private IEnumerator StartLocationService()
