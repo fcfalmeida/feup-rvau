@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
         player.enabled = true;
         menuCanvas.gameObject.SetActive(false);
 
+        GetComponent<PickupSpawner>().enabled = true;
+
         DisplayScore();
     }
 

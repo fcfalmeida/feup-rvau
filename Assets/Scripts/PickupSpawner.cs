@@ -7,11 +7,22 @@ public class PickupSpawner : MonoBehaviour
     public GameObject[] spawnLocations;
 
     private List<PickupItem> pickups = new List<PickupItem>();
-
-    void Start()
+    private GameManager gameManager;
+    
+    void OnEnable()
     {
+        gameManager = GetComponent<GameManager>();
+
         // Search for pickups in the PickupStash which are then relocated
         GameObject pickupStash = GameObject.FindGameObjectWithTag("PickupStash");
+
+        GameObject originalPickup = pickupStash.transform.GetChild(0).gameObject;
+
+        for (int i = 1; i < gameManager.scoreGoal; i++)
+        {
+            GameObject copy = Instantiate(originalPickup);
+            copy.transform.parent = pickupStash.transform;
+        }
 
         foreach (Transform pickup in pickupStash.transform)
             pickups.Add(pickup.GetComponent<PickupItem>());
