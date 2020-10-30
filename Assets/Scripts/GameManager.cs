@@ -17,27 +17,19 @@ public class GameManager : MonoBehaviour
     private int playerScore;
     private bool inGame;
 
-    void Start()
-    {
-        DisplayScore();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void DisplayScore()
     {
         scoreText.text = "Books found: " + playerScore + "/" + scoreGoal;
         scoreText.gameObject.SetActive(true);
+        StartCoroutine(FadeText(3f, scoreText, Color.white));
         StartCoroutine("HideScore");
     }
 
     private IEnumerator HideScore()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
+        StartCoroutine(FadeText(3f, scoreText, Color.clear));
+        yield return new WaitForSeconds(3f);
         scoreText.gameObject.SetActive(false);
     }
 
@@ -53,6 +45,8 @@ public class GameManager : MonoBehaviour
         slenderman.enabled = true;
         player.enabled = true;
         menuCanvas.gameObject.SetActive(false);
+
+        DisplayScore();
     }
 
     public void EndGame()
@@ -84,6 +78,16 @@ public class GameManager : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    private IEnumerator FadeText(float fadeOutTime, Text text, Color targetColor)
+    { 
+        Color originalColor = text.color;
+        for (float t = 0.01f; t < fadeOutTime; t += Time.deltaTime)
+        {
+            text.color = Color.Lerp(originalColor, targetColor, Mathf.Min(1, t/fadeOutTime));
+            yield return null;
         }
     }
 }
