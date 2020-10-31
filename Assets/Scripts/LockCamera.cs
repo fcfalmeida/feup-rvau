@@ -5,16 +5,18 @@ using UnityEngine;
 public class LockCamera : MonoBehaviour
 {
   public Transform CameraTransform;
-  [SerializeField] Vector3 offSet;
+  public Vector3 offset;
+  [SerializeField] private Vector3 _offSet;
   // Start is called before the first frame update
   void Start()
   {
-    CameraTransform.localPosition = offSet;
+    CameraTransform.localPosition = _offSet;
   }
 
   // Update is called once per frame
   void Update()
   {
-    CameraTransform.localPosition = offSet;
+    _offSet = offset;
+    CameraTransform.localPosition = _offSet;
   }
 }
