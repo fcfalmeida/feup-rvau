@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
     public void PickupItem(PickupItem pickup)
     {
+        transform.Find("InteractionAudio").GetComponent<AudioSource>().Play();
         pickupCount++;
         Destroy(pickup.gameObject);
         gameManager.UpdateScore(pickupCount);
