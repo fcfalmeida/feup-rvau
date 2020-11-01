@@ -16,16 +16,19 @@ public class GlitchCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(slender.transform.position, transform.position);
-        float angle = Vector3.Angle(transform.forward, slender.transform.position - transform.position);
+        if (slender)
+        {
+            float distance = Vector3.Distance(slender.transform.position, transform.position);
+            float angle = Vector3.Angle(transform.forward, slender.transform.position - transform.position);
 
-        if (angle < 40 && distance < 8)
-        {
-            animator.SetBool("bzz", true);
-        }
-        else
-        {
-            animator.SetBool("bzz", false);
+            if (angle < 40 && distance < 8)
+            {
+                animator.SetBool("bzz", true);
+            }
+            else
+            {
+                animator.SetBool("bzz", false);
+            }
         }
     }
 }

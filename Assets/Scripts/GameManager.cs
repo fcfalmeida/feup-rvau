@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
   [Header("Difficulty Parameters")]
   public int scoreGoal;
+  public float slendermanHitByThrowableForce;
   public float slendermanSpeed;
 
   private int playerScore;
@@ -103,15 +104,18 @@ public class GameManager : MonoBehaviour
     {
       case "Easy":
         scoreGoal = 4;
-        slendermanSpeed = 1.0f;
+        slendermanSpeed = 0.1f;
+        slendermanHitByThrowableForce = 500;
         break;
       case "Medium":
         scoreGoal = 6;
-        slendermanSpeed = 1.2f;
+        slendermanHitByThrowableForce = 300;
+        slendermanSpeed = 0.2f;
         break;
       case "Hard":
         scoreGoal = 8;
-        slendermanSpeed = 1.4f;
+        slendermanHitByThrowableForce = 150;
+        slendermanSpeed = 0.3f;
         break;
       default:
         break;

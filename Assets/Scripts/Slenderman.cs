@@ -8,19 +8,27 @@ public class Slenderman : MonoBehaviour
 {
     Camera mainCamera;
     GameObject player;
-    public float hitByThrowableForce = 10000;
+    public float hitByThrowableForce;
     public float speed;
     public int RESPAWNSECONDS;
     public System.DateTime startTime;
+    private GameManager gameManager;
+
 
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
         player = GameObject.Find("Player/Main Camera");
-        startTime = System.DateTime.UtcNow;
         //Ignore the collisions between layer 0 (default) and layer 8 (custom layer you set in Inspector window)
         Physics.IgnoreLayerCollision(0, 8);
+        startTime = System.DateTime.UtcNow;
+    }
+    void OnEnable()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        speed = gameManager.slendermanSpeed;
+        hitByThrowableForce = gameManager.slendermanHitByThrowableForce;
     }
 
     // Update is called once per frame
