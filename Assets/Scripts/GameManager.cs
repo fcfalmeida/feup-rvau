@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
   public void EndGame()
   {
     Debug.Log("Game Over!");
+    Camera.main.GetComponent<Animator>().SetBool("gameOver", true);
     player.enabled = false;
     Physics.IgnoreCollision(slenderman.GetComponent<Collider>(), player.GetComponent<Collider>());
     player.GetComponentInChildren<Kino.AnalogGlitch>().horizontalShake = 0.4f;
