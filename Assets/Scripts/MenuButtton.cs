@@ -11,16 +11,21 @@ public class MenuButtton : MonoBehaviour
     void Update() 
     {
         if (focused && Input.GetButtonDown("Interact"))
+        {
+            focused = false;
             onInteract.Invoke();
+        }
     }
 
     public void OnGazeEnter()
     {
+        Debug.Log(gameObject + " is focused");
         focused = true;
     }
 
     public void OnGazeExit()
     {
         focused = false;
+        Debug.Log(gameObject + " no longer focused");
     }
 }
