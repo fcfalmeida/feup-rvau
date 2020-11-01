@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
   public Slenderman slenderman;
   public PlayerController player;
   public Canvas menuCanvas;
+  public Canvas winCanvas;
 
   [Header("Difficulty Parameters")]
   public int scoreGoal;
@@ -18,15 +19,12 @@ public class GameManager : MonoBehaviour
 
   private int playerScore;
   private bool inGame;
-  private Vector3 playerInitialPosition;
-  private Vector3 slenderInitialPosition;
+  private Vector3 initialPos;
 
   void Start()
   {
-    playerInitialPosition = player.transform.position;
-    slenderInitialPosition = slenderman.transform.position;
+    initialPos = player.transform.position;
   }
-
   private void DisplayScore()
   {
     scoreText.text = "Books found: " + playerScore + "/" + scoreGoal;
@@ -46,7 +44,15 @@ public class GameManager : MonoBehaviour
   public void UpdateScore(int newScore)
   {
     playerScore = newScore;
-    DisplayScore();
+
+    if (playerScore == scoreGoal)
+    {
+      WinGame();
+    }
+    else
+    {
+      DisplayScore();
+    }
   }
 
   public void StartGame()
@@ -71,7 +77,25 @@ public class GameManager : MonoBehaviour
     Invoke("ShowSlenderManInFront", 1);
   }
 
-  private void Reset()
+  public void WinGame()
+  {
+    Debug.Log("You Won!");
+    player.enabled = false;
+    slenderman.enabled = false;
+
+    float xDirection = Camera.main.transform.forward.x;
+    float yDirection = Camera.main.transform.forward.y;
+    float zDirection = Camera.main.transform.forward.z;
+
+    Vector3 lookingDirection = new Vector3(xDirection, yDirection, zDirection);
+
+    winCanvas.transform.LookAt(winCanvas.transform.transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
+    winCanvas.transform.position = player.transform.position + lookingDirection * 0.6f;
+
+    winCanvas.gameObject.SetActive(true);
+  }
+
+  public void Reset()
   {
     Scene scene = SceneManager.GetActiveScene();
     SceneManager.LoadScene(scene.name);
