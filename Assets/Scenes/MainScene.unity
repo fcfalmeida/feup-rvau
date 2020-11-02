@@ -5974,7 +5974,7 @@ MonoBehaviour:
   player: {fileID: 876757679}
   menuCanvas: {fileID: 965919883}
   winCanvas: {fileID: 1697841527}
-  scoreGoalEasy: 1
+  scoreGoalEasy: 4
   slendermanHitByThrowableForceEasy: 500
   slendermanSpeedEasy: 0.1
   scoreGoalMedium: 6
