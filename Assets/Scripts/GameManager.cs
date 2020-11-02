@@ -148,19 +148,19 @@ public class GameManager : MonoBehaviour
     switch (difficulty)
     {
       case "Easy":
-        scoreGoal = 4;
-        slendermanHitByThrowableForce = 500;
-        slendermanSpeed = 0.1f;
+        scoreGoal = scoreGoalEasy;
+        slendermanHitByThrowableForce = slendermanHitByThrowableForceEasy;
+        slendermanSpeed = slendermanSpeedEasy;
         break;
       case "Medium":
-        scoreGoal = 6;
-        slendermanHitByThrowableForce = 300;
-        slendermanSpeed = 0.2f;
+        scoreGoal = scoreGoalMedium;
+        slendermanHitByThrowableForce = slendermanHitByThrowableForceMedium;
+        slendermanSpeed = slendermanSpeedMedium;
         break;
       case "Hard":
-        scoreGoal = 8;
-        slendermanHitByThrowableForce = 150;
-        slendermanSpeed = 0.3f;
+        scoreGoal = scoreGoalHard;
+        slendermanHitByThrowableForce = slendermanHitByThrowableForceHard;
+        slendermanSpeed = slendermanSpeedHard;
         break;
       default:
         break;
