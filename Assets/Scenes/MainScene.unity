@@ -5974,9 +5974,15 @@ MonoBehaviour:
   player: {fileID: 876757679}
   menuCanvas: {fileID: 965919883}
   winCanvas: {fileID: 1697841527}
-  scoreGoal: 4
-  slendermanHitByThrowableForce: 500
-  slendermanSpeed: 0.1
+  scoreGoalEasy: 1
+  slendermanHitByThrowableForceEasy: 500
+  slendermanSpeedEasy: 0.1
+  scoreGoalMedium: 6
+  slendermanHitByThrowableForceMedium: 300
+  slendermanSpeedMedium: 0.2
+  scoreGoalHard: 8
+  slendermanHitByThrowableForceHard: 150
+  slendermanSpeedHard: 0.3
 --- !u!4 &1592669301
 Transform:
   m_ObjectHideFlags: 0

@@ -27,8 +27,8 @@ public class Slenderman : MonoBehaviour
   void OnEnable()
   {
     gameManager = FindObjectOfType<GameManager>();
-    speed = gameManager.slendermanSpeed;
-    hitByThrowableForce = gameManager.slendermanHitByThrowableForce;
+    speed = gameManager.getSlendermanSpeed();
+    hitByThrowableForce = gameManager.getSlendermanHitByThrowableForce();
   }
 
   // Update is called once per frame
