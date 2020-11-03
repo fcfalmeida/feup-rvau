@@ -18,7 +18,7 @@ public class PickupSpawner : MonoBehaviour
 
         GameObject originalPickup = pickupStash.transform.GetChild(0).gameObject;
 
-        for (int i = 1; i < gameManager.GetScoreGoal(); i++)
+        for (int i = 1; i < Settings.scoreGoal; i++)
         {
             GameObject copy = Instantiate(originalPickup);
             copy.transform.parent = pickupStash.transform;
