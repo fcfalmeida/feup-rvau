@@ -23,3 +23,8 @@ SlenderVR is a horror VR game for Android devices heavily inspired by the Slende
 
 This project uses Unity version 2019.3.4f1. Simply clone this repository and add the directory to Unity Hub.  
 If you simply want to play the game on your Android device, simply install the .apk and run it. The game requires a Google Cardboard viewer and a Dualshock 4 controller connected via bluetooth. If you want to enable device location based weather, manually give the app permission to access your location on your device settings. You can get the .apk under [releases](https://github.com/fcfalmeida/feup-rvau/releases).
+
+## Developed by
+- Francisco Almeida (up201909574@fe.up.pt)
+- Joel Coelho (up201909577@fe.up.pt)
+- Miguel Castro (up201909578@fe.up.pt)
